@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Nico's Color Scheme Generator</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <form class="generator-form" id="generator-form">
+                <input type="color" id="color-picker" aria-label="Choose your base color" value="#000000">
+                <select name="mode-selection" id="mode-selection" aria-label="Choose the color mode for the palette">
+                    <option value="monochrome" selected>Monochrome</option>
+                    <option value="monochrome-dark">Monochrome-dark</option>
+                    <option value="monochrome-light">Monochrome-light</option>
+                    <option value="analogic">Analogic</option>
+                    <option value="complement">Complement</option>
+                    <option value="analogic-complement">Analogic-complement</option>
+                    <option value="triad">Triad</option>
+                    <option value="quad">Quad</option>
+                </select>
+                <button type="submit" id="get-color-btn">Get color scheme</button>
+            </form>
+        </header>
+        <main>
+            <div class="color-showcase" id="color-showcase">
+            </div>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
