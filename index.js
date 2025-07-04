@@ -25,14 +25,26 @@ function renderColors() {
 
     const html = colorsArray.map(color => {
         return `
-        <div class="color-container">
+        <div class="color-container" data-hex="${color.hex.value}">
             <div class="color-canvas" style="background-color: ${color.hex.value}" ></div>
             <div class="color-hex"><p>${color.hex.value}</p></div>
+            <span class="tooltip">${color.hex.value} copied to clipboard!</span>
         </div>
         `
     }).join('')
 
     colorShowcase.innerHTML = html
+
+    document.querySelectorAll('.color-container').forEach(el => {
+        el.addEventListener('click', function(){
+            const hexValue = el.getAttribute('data-hex')
+            navigator.clipboard.writeText(hexValue)
+            // show tooltip momentarily
+            const tooltip = el.querySelector('.tooltip')
+            tooltip.classList.add('show')
+            setTimeout(() => tooltip.classList.remove('show'), 1200)
+        })
+    })
 }
 
 function getColor() {
