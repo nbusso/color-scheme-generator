@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,6 +7,8 @@
 
 body {
     height: 550px;
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(19, 18, 18);
 }
 .container {
     margin: 0 auto;
@@ -29,20 +33,46 @@ header {
 
 #color-picker {
     height: 42px;
+    border-radius: 0;
+    border: none;
+}
+
+#mode-selection,
+#get-color-btn {
+    background-color: inherit;
+    color: #D1D5DB;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 #mode-selection {
     height: 42px;
     width: 312px;
+    padding: 9px 13px;
+    font-size: 1rem;
+}
+
+#mode-selection:hover {
+    background-color: #323f52;
+    
+}
+
+#mode-selection option {
+    cursor: pointer;
 }
 
 #get-color-btn {
     padding: 11px 10px;
 }
 
+#get-color-btn:hover  {
+    background-color: #323f52;
+}
+
 main {
     flex: 1;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
@@ -68,4 +98,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #D1D5DB;
+    font-size: 0.75rem;
 }
